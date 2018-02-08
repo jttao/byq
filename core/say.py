@@ -86,16 +86,23 @@ class Interpreter(object):
             self.error()
 
     def expr(self):
-        """expr -> WORD WORD WORD WORD """
-        # set current token to the first token taken from the input
-        self.current_token = self.get_next_token()
+        """Arithmetic expression parser / interpreter. 
+        say>主语、谓语、宾语（定语、状语、补语） 
 
+        expr   : phrase ((把 | 被) phrase)*
+        phrase : word ((MUL | DIV) word)*
+        word   : char | word
+        """
+        
+        # set current token to the first token taken from the input
+        self.current_token = self.get_next_token() 
         #
+        
         word = self.current_token
         self.eat(WORD)
+ 
 
-        # EOF token
-
+        # EOF token 
         return word.value
 
 def main():  
