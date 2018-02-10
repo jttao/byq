@@ -149,14 +149,12 @@ class Interpreter(object):
         符号：
         =主语=|谓语|{宾语}(定语)[状语]<补语> 
         say> 主语、谓语、宾语（定语、状语、补语）  
-        1.=主语=|谓语|
-        2.=主语=|谓语|{宾语}
         
         expr   : phrase (=主语=|谓语|{宾语}(定语)[状语]<补语>)*
         phrase : word ((MUL | DIV) word)*
         word   : char | word 
         """ 
-
+        
         result = self.phrase()
 
         while self.current_token.type in (PLUS, MINUS):
