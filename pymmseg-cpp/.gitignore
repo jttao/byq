@@ -1,9 +1,0 @@
-*.o
-*.so
-a.out
-ext/rmmseg
-doc
-*.gem
-!ext/rmmseg/*.{cpp,h}
-*.pyc
-
